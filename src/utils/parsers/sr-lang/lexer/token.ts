@@ -1,18 +1,18 @@
 import { SrcLoc } from "src/utils/parsers/sr-lang/lexer/src-loc";
-import { TokenTypes } from "src/utils/parsers/sr-lang/lexer/token-types";
-
+import { TokenTypes } from "src/utils/parsers/sr-lang/lexer/types/token-types";
+// TODO: Implement this: https://dev.to/jasonsbarr/create-your-own-programming-language-part-i-numbers-13cj
 export class Token {
-    type: TokenTypes;
+    tokenType: TokenTypes;
     value: string;
     srcLoc: SrcLoc;
 
-    constructor(type: TokenTypes, value: string, srcLoc: SrcLoc) {
-        this.type = type;
+    constructor(tokenType: TokenTypes, value: string, srcLoc: SrcLoc) {
+        this.tokenType = tokenType;
         this.value = value;
         this.srcLoc = srcLoc;
     }
 
-    static new(type: TokenTypes, value: string, srcLoc: SrcLoc) {
-        return new Token(type, value, srcLoc);
+    static new(tokenType: TokenTypes, value: string, srcLoc: SrcLoc) {
+        return new Token(tokenType, value, srcLoc);
     }
 }
